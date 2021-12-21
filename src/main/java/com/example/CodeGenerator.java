@@ -24,7 +24,7 @@ public class CodeGenerator {
     /**
      * 父包名
      */
-    private static final String PARENT = "com.bixin.ido.server";
+    private static final String PARENT = "com.bixin.nft";
 
     /**
      * 模块儿名
@@ -34,7 +34,7 @@ public class CodeGenerator {
     /**
      * 表名，多个表用英文逗号分隔
      */
-    private static final String TABLES = "mining_harvest_records";
+    private static final String TABLES = "nft_composite_card,nft_composite_element";
 
     /**
      * 表前缀，例如某公司规范，所有表名必须以t_开头，生成model时候会生成@TableName注解标明表的名称
@@ -44,7 +44,7 @@ public class CodeGenerator {
     /**
      * 数据库连接地址
      */
-    private static final String URL = "jdbc:mysql://localhost:3306/ido_server?useUnicode=true&useSSL=false&characterEncoding=utf8";
+    private static final String URL = "jdbc:mysql://52.77.131.111:3306/ido_server?useUnicode=true&useSSL=false&characterEncoding=utf8";
 
     /**
      * 数据驱动名称
@@ -54,12 +54,12 @@ public class CodeGenerator {
     /**
      * 数据库用户名
      */
-    private static final String USERNAME = "root";
+    private static final String USERNAME = "admin";
 
     /**
      * 数据库密码
      */
-    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "OdeWzZNalcTPk2LAo0Lg";
 
     public static void main(String[] args) {
         // 代码生成器

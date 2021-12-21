@@ -12,15 +12,15 @@
     <resultMap id="BaseResultMap" type="${package.Entity}.${entity}">
 <#list table.fields as field>
 <#if field.keyFlag><#--生成主键排在第一位-->
-        <id column="${field.name}" property="${field.propertyName?substring(1,2)?lower_case}${field.propertyName?substring(2)}" />
+        <id column="${field.name}" property="${field.name?lower_case}" />
 </#if>
 </#list>
 <#list table.commonFields as field><#--生成公共字段 -->
-        <result column="${field.name}" property="${field.propertyName?substring(1,2)?lower_case}${field.propertyName?substring(2)}" />
+        <result column="${field.name}" property="${field.name?lower_case}" />
 </#list>
 <#list table.fields as field>
 <#if !field.keyFlag><#--生成普通字段 -->
-        <result column="${field.name}" property="${field.propertyName?substring(1,2)?lower_case}${field.propertyName?substring(2)}" />
+        <result column="${field.name}" property="${field.name?lower_case}" />
 </#if>
 </#list>
     </resultMap>
@@ -30,14 +30,14 @@
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
 <#list table.commonFields as field>
-        ${field.columnName} as ${field.propertyName?substring(1,2)?lower_case}${field.propertyName?substring(2)},
+        ${field.columnName} as ${field.name?lower_case},
 </#list>
 <#list table.fields as field>
     <#if field.keyFlag><#--生成主键排在第一位-->
-        ${field.columnName} as ${field.propertyName?substring(1,2)?lower_case}${field.propertyName?substring(2)}
+        ${field.columnName} as ${field.name?lower_case}
     </#if>
     <#if !field.keyFlag><#--生成普通字段 -->
-        ,${field.columnName} as ${field.propertyName?substring(1,2)?lower_case}${field.propertyName?substring(2)}
+        ,${field.columnName} as ${field.name?lower_case}
     </#if>
 </#list>
     </sql>
